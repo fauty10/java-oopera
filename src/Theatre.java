@@ -12,9 +12,18 @@ public class Theatre {
         Person musicAuthor = new Person("Андрей", "Петров", Gender.MALE);
         Person choreographer = new Person("Алекс", "Фрай", Gender.MALE);
         Show show = new Show("Гамлет", 2, director1.toString(), new ArrayList<>());
-        Libretto libretto = new Libretto();
-        Opera opera = new Opera("Призрак оперы", 2, director2.toString(), new ArrayList<>(), musicAuthor.toString(), libretto.libretto2, 10);
-        Ballet ballet = new Ballet("Наполеон", 2, director2.toString(), new ArrayList<>(), musicAuthor.toString(), libretto.libretto1, choreographer.toString());
+        Opera opera = new Opera("Призрак оперы", 2, director2.toString(), new ArrayList<>(), musicAuthor.toString(), "Начало. \n" +
+                "1. Призрак появился\n" +
+                "2. Все поют\n" +
+                "3. Призрак без маски\n" +
+                "4. Все поют\n" +
+                "Конец\n", 10);
+        Ballet ballet = new Ballet("Наполеон", 2, director2.toString(), new ArrayList<>(), musicAuthor.toString(), "Начало.\n" +
+                "1. Наполеон думает\n" +
+                "2. Наполеон уехал из Парижа\n" +
+                "3. Все танцуют\n" +
+                "4. Наполеон вернулся в Париж\n" +
+                "Конец\n", choreographer.toString());
         show.printDirector(director1);
         show.addActor(actor1);
         show.addActor(actor2);
@@ -25,13 +34,13 @@ public class Theatre {
         opera.addActor(actor1);
         opera.addActor(actor3);
         opera.printActors();
-        opera.printlibretto(libretto.libretto2);
+        opera.printlibretto();
 
         ballet.printDirector(director2);
         ballet.addActor(actor2);
         ballet.addActor(actor3);
         ballet.printActors();
-        ballet.printlibretto(libretto.libretto1);
+        ballet.printlibretto();
 
         ballet.changeActor(actor2, actor1);
         ballet.printActors();
